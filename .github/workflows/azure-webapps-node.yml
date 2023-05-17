@@ -4,17 +4,17 @@ on:
         - main
     workflow_dispatch:
   
-  env:
+env:
     # change to your application's name in Azure
-    AZURE_WEBAPP_NAME: nasa-apod-picker    
+    AZURE_WEBAPP_NAME: customerdemo-react
     # change both instances of azure-react-apod to the name of your repo
     AZURE_WEBAPP_PACKAGE_PATH: '/home/runner/work/azure-react-apod/azure-react-apod'   
     # set this to the node version to use if not 16
     NODE_VERSION: '16.x'                
     # NASA API key recorded as GitHub secret, delete if you haven't followed APOD section
-    REACT_APP_NASA_API_KEY: ${{ secrets.REACT_APP_NASA_API_KEY }} 
-  
-  jobs:
+    REACT_APP_NASA_API_KEY: ${{ secrets.REACT_APP_NASA_API_KEY }}   
+    
+jobs:
     build:
       runs-on: ubuntu-latest
       steps:
